@@ -33,3 +33,9 @@ contact:
 home
 
 login
+
+
+- url : path
+- view : logic
+- models : database
+- Templets : frontend

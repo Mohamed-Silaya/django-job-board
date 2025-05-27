@@ -39,3 +39,9 @@ login
 - view : logic
 - models : database
 - Templets : frontend
+
+
+Relation ships:
+    One to many =? Foreign key
+    many to many => 
+    one to one =>

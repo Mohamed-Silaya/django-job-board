@@ -28,8 +28,16 @@ class Job (models.Model):
     published_at = models.DateTimeField(auto_now=True)
     vacancy = models.IntegerField(default=1)
     salary = models.IntegerField(default=0)
-    # catigory= 
+    category= models.ForeignKey('Category',on_delete=models.CASCADE) 
     experience = models.IntegerField(default=1)
 
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
+
+class Category (models.Model):
+    name = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.name
+
+

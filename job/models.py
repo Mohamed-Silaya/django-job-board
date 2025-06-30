@@ -18,7 +18,10 @@ JOB_TYPE =(
     ('remote', 'Remote'),
     ('freelance', 'Freelance')
 )
-
+def image_upload(instance, filename):
+    imagename , extentsion = filename.split(".")
+    return "jobs/%s/%s.%s"%(instance.id,instance.id,extentsion)
+    
 
 class Job (models.Model):
     title = models.CharField(max_length=100)
@@ -30,6 +33,7 @@ class Job (models.Model):
     salary = models.IntegerField(default=0)
     category= models.ForeignKey('Category',on_delete=models.CASCADE) 
     experience = models.IntegerField(default=1)
+    image = models.ImageField(upload_to=image_upload)
 
     def __str__(self):
         return self.title
